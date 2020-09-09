@@ -1,23 +1,16 @@
 class Credentials:
     '''
-    Class that generates new instance of credentials
+    class that creates instances credentials 
     '''
     credentials_list = []
 
-    def __init__(self, account, account_username , account_password):
-        self.account= account
-        self.account_username = account_username
-        self.account_password = account_password
-        
+    def __init__(self, account, email, password):
+        self.account = account
+        self.email = email
+        self.password = password
 
-    def save_credentials(safe):
+    def save_credentials(self):
         '''
-        save credentials method saves user objects into credentials_list 
+        self credentials in credentials_list
         '''
-        Credentials.credentials_list.append(safe)
-
-    def delete_credentials(safe):
-        '''
-        delete credentials method delete saved credential
-        '''
-        Credentials.credentials_list.remove(self)
+        Credentials.credentials_list.append(self)
