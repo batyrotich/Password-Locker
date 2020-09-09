@@ -16,6 +16,9 @@ class TestUser(unittest.TestCase):
     """
      set up method to run before each test cases
     """
+    def tearDown(self):
+      User.user_list = []
+
     def test__init(self):
       self.assertEqual(self.new_user.name, "eddah")
       self.assertEqual(self.new_user.user_password, "1234")

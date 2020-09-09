@@ -4,8 +4,9 @@ class Credentials:
     '''
     credentials_list = []
 
-    def __init__(self, account, email , password):
+    def __init__(self, account, account_username , account_password):
         self.account= account
-        self.email = email
-        self.password = password
+        self.account_username = account_username
+        self.account_password = accpunt_password
+        
         
