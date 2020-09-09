@@ -19,4 +19,20 @@ class Credentials:
         '''
         delete credentials 
         '''
-        Credentials.credentials_list.remove(self)  
+        Credentials.credentials_list.remove(self) 
+
+
+    @classmethod
+    def find_by_account(cls, account):
+        '''
+        will take an account and return the credentials associated with it
+        '''
+        for credentials in cls.credentials_list:
+            if credentials.account == account:
+                return credentials
+
+
+            
+
+        
+             
