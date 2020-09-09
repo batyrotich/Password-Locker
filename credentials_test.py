@@ -36,9 +36,19 @@ class TestCredentials(unittest.TestCase):
         to enable users store multiple credentials
         '''
         self.new_credentials.save_credentials()
-        test_credentials = Credentials("Yahoo", "testuser", "password")
+        test_credentials = Credentials("facebook", "testuser", "password")
         test_credentials.save_credentials()
         self.assertEqual(len(Credentials.credentials_list), 2)
+
+    def test_delete_credentials(self):
+        '''
+         This to test delete credentials method
+        '''
+        self.new_credentials.save_credentials()
+        test_credentials = Credentials("facebook", "testuser", "password")
+        test_credentials.save_credentials()
+        self.new_credentials.delete_credentials()
+        self.assertEqual(len(Credentials.credentials_list), 1)
 
 
 if __name__ == '__main__':
