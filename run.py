@@ -27,3 +27,40 @@ def delete_user(user):
     function to delete user
     '''
     user.delete_user()
+def generate_password(user):
+    '''
+    function to generate random password for user
+    '''
+    return user.generate_password()
+
+def create_credentials(account, email, password):
+    '''
+    function to create new user credentials with account email and password parameters
+    '''
+    new_credentials = Credentials(account, email, password)
+    return new_credentials
+
+def save_credentials(credentials):
+    '''
+    function to save credentials
+    '''
+    credentials.save_credentials()
+
+def delete_credentials(credentials):
+    '''
+    function  to delete credentials
+    '''
+    credentials.delete_credentials()
+
+def find_credentials(account):
+    '''
+    function to find credentials , it returns the account
+    '''
+    return Credentials.find_by_account(account)
+
+def display_credentials():
+    '''
+    function to display all credentials
+    '''
+    return Credentials.display_all_credentials()
+    
