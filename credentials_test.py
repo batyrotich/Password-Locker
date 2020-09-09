@@ -61,6 +61,13 @@ class TestCredentials(unittest.TestCase):
 
         self.assertEqual(found_credentials.account, test_credentials.account)
 
+    def test_display_credentials(self):
+        '''
+        test display_credentials method
+        '''
+        self.assertEqual(Credentials.display_credentials(),
+                         Credentials.credentials_list)
+
 
 if __name__ == '__main__':
     unittest.main()
