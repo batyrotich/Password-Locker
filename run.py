@@ -67,7 +67,7 @@ def display_credentials():
     '''
     function to display all credentials
     '''
-    return Credentials.display_all_credentials()
+    return Credentials.display_credentials()
 
 def main():
     print("Hello Welcome to Password Locker Application")
@@ -129,6 +129,24 @@ def main():
 
             print("\n")
             print(f"New Credentials {account}  {email}  {password} has been created")
+            print("Use SHORT CODE dc to display credentials")
+
+        elif short_code == 'dc':
+            if display_credentials():
+                print("Here is a list of all your credentials and passwords")
+                print("\n")
+                for credentials in display_credentials():
+                    print(f"{credentials.account}")
+                    print(f"{credentials.email}")
+                    print(f"{credentials.password}")
+                    print("To delete credentials use SHORT CODE dl")
+            else:
+                print("\n")
+                print("You do not have any saved credentials yet")
+                print("\n")
+
+
+
 
              
 
