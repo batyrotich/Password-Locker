@@ -145,20 +145,12 @@ def main():
                 print("You do not have any saved credentials yet")
                 print("\n")
 
-
-
-
-             
-
-            
-
-
-
-
-
-
-
-
+        elif short_code == "dl":
+            print("Enter the account username of the credential you would like to delete.")
+            my_delete = input("")
+            my_del = find_credentials(my_delete)
+            print(f"Credentials with account username {my_delete} has been removed successfully")
+            print("Use SHORT CODE fc to search  for credential")
 
 
 if __name__ == "__main__":
