@@ -29,11 +29,12 @@ def delete_user(user):
     function to delete user
     '''
     user.delete_user()
- def generate_password():
+def generate_password():
     '''
     function to generate a random password 
     '''
     gen_pass = Credentials.generate_password()
+
     return gen_pass
 
 def create_credentials(account, email, password):
@@ -41,6 +42,7 @@ def create_credentials(account, email, password):
     function to create new user credentials with account email and password parameters
     '''
     new_credentials = Credentials(account, email, password)
+
     return new_credentials
 
 def save_credentials(credentials):
@@ -109,10 +111,26 @@ def main():
             print("-" * 10)
 
             print("Account e.g twitter, facebook, instagram .....")
-            acount = input()
+            account = input()
 
             print("Email .....")
             email = input()
+
+            print("choose password option: 'gp' to generate password, 'ep' to enter password")
+            password_option = input()
+            if password_option == 'ep':
+                print("Enter Password")
+                password = input()
+            elif password_option == 'gp':
+                password = generate_password()
+
+            save_credentials(create_credentials(
+                account, email, password))
+
+            print("\n")
+            print(f"New Credentials {account}  {email}  {password} has been created")
+
+             
 
             
 
