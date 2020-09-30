@@ -48,6 +48,16 @@ class Credentials:
         string.digits + "</;#%@^*!~"
         gen_pass = ''.join(random.choice(password) for i in range (size))
         return gen_pass
+        
+    @classmethod
+    def credentials_exist(cls, email):
+        '''
+        to search for existing account using email
+        '''
+        for credentials in cls.credentials_list:
+            if credentials.email == email:
+                return True
+            return False
 
 
     

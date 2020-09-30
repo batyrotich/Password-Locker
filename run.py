@@ -69,6 +69,13 @@ def display_credentials():
     '''
     return Credentials.display_credentials()
 
+def check_existing_credentials():
+    '''
+    function to search credential
+    '''
+    return Credentials.credentials_exist(email)
+  
+
 def main():
     print("Hello Welcome to Password Locker Application")
     print("\n")
@@ -139,18 +146,39 @@ def main():
                     print(f"{credentials.account}")
                     print(f"{credentials.email}")
                     print(f"{credentials.password}")
-                    print("To delete credentials use SHORT CODE dl")
+                    print("To delete credentials use SHORT CODE dl , fc to search for credential")
             else:
                 print("\n")
                 print("You do not have any saved credentials yet")
                 print("\n")
 
-        elif short_code == "dl":
+        elif short_code == 'dl':
             print("Enter the account username of the credential you would like to delete.")
             my_delete = input("")
             my_del = find_credentials(my_delete)
             print(f"Credentials with account username {my_delete} has been removed successfully")
-            print("Use SHORT CODE fc to search  for credential")
+    
+        
+        elif short_code == 'fc':
+            print("Enter the email of the account you want to search for")
+            email = input()
+            if check_existing_credentials(email):
+                search_credentials= find_credentials(email)
+                print(f"{credentials.account} {credentials.email}")
+                print('-'* 20)
+
+                print(
+                    f"Account password .....{credentials.password}"
+
+                )
+            else:
+                print("That credentialdoes not exist")
+        
+        elif short_code == 'ex':
+            break
+        else:
+            print("Enter a valid short code")
+
 
 
 if __name__ == "__main__":
