@@ -101,6 +101,19 @@ def main():
             else:
                 print(f"{user_name} Your Log in to password locker was successful")
                 print("welcome to your credentias")
+                print("USE THE SHORT CODES: cc to create new credentials ex to exit")
+        
+        elif short_code == 'cc':
+            print("Create account")
+            print("-" * 10)
+
+            print("Account e.g twitter, facebook, instagram .....")
+            acount = input()
+
+            print("Email .....")
+            email = input()
+
+            
 
 
 
