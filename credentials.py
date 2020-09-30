@@ -36,6 +36,18 @@ class Credentials:
         method that  displays all credentials
         '''
         return cls.credentials_list
+        
+    def generate_password(size=7):
+        '''
+        method to generate 7 character password for a credential
+        '''
+
+        password = string.ascii_uppercase + string.ascii_lower + \ 
+            string.digits + "</;#%@^*!~"
+        gen_pass = ''.join(random.choice(password) for i in range (size))
+        return gen_pass
+
+
     
      
 

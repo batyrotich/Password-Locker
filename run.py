@@ -29,11 +29,12 @@ def delete_user(user):
     function to delete user
     '''
     user.delete_user()
-# def generate_password(user):
-#     '''
-#     function to generate random password for user
-#     '''
-#     return user.generate_password()
+ def generate_password():
+    '''
+    function to generate a random password 
+    '''
+    gen_pass = Credentials.generate_password()
+    return gen_pass
 
 def create_credentials(account, email, password):
     '''
