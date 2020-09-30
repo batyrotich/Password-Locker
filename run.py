@@ -76,7 +76,40 @@ def main():
         2. ex - To exit
         '''
     )
-    
+    while True:
+
+        short_code = input().lower()
+
+        if short_code == 'lg':
+            '''
+            to enable user log in
+
+            '''
+            print("Log in to password locker")
+            print("Enter User name")
+            user_name = input()
+            print("Enter Password")
+            password = input()
+            print("Confirm Password")
+            confirm_password = input()
+
+            while confirm_password != password:
+                print("Password does not match")
+                print("Enter your Password")
+                password = input()
+
+            else:
+                print(f"{user_name} Your Log in to password locker was successful")
+                print("welcome to your credentias")
+
+
+
+
+
+
+
+
+
 
 if __name__ == "__main__":
     main()
