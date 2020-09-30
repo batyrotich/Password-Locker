@@ -67,6 +67,16 @@ def display_credentials():
     return Credentials.display_all_credentials()
 
 def main():
+    print("Hello Welcome to Password Locker Application")
+    print("\n")
+    print(
+        '''
+        USE THE SHORT CODES
+        1. lg - To log in
+        2. ex - To exit
+        '''
+    )
     
+
 if __name__ == "__main__":
     main()
