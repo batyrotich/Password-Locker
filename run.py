@@ -143,9 +143,9 @@ def main():
                 print("Here is a list of all your credentials and passwords")
                 print("\n")
                 for credentials in display_credentials():
-                    print(f"{credentials.account}")
-                    print(f"{credentials.email}")
-                    print(f"{credentials.password}")
+                    print(f" Account: {credentials.account}")
+                    print(f" Email:{credentials.email}")
+                    print(f" Password: {credentials.password}")
                     print("To delete credentials use SHORT CODE dl , fc to search for credential")
             else:
                 print("\n")
