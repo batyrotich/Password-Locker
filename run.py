@@ -69,7 +69,7 @@ def display_credentials():
     '''
     return Credentials.display_credentials()
 
-def check_existing_credentials():
+def check_existing_credentials(email):
     '''
     function to search credential
     '''
@@ -161,9 +161,9 @@ def main():
         
         elif short_code == 'fc':
             print("Enter the email of the account you want to search for")
-            email = input()
-            if check_existing_credentials(email):
-                search_credentials= find_credentials(email)
+            search_email = input()
+            if check_existing_credentials(search_email):
+                search_credentials= find_credentials(search_email)
                 print(f"{credentials.account} {credentials.email}")
                 print('-'* 20)
 
@@ -173,6 +173,7 @@ def main():
                 )
             else:
                 print("That credentialdoes not exist")
+                print("Use shortcode ex to exit Password locker Appllication")
         
         elif short_code == 'ex':
             break
